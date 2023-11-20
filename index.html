@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <!-- Esta etiqueta le indica al navegador web Internet Explorer que debe utilizar la ultima version disponible -->
+  <meta http-equiv="X-UA-Compatible" content="IE-=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de tareas</title>
+
+  <!-- Link de estilo de fuente Lato -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+
+  <!-- Link a la hoja de estilo -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Link al script js, se puede omitir el atributo type. defer indica al navegador que debe continuar procesando el HTML mientras carga el script en segundo plano y ejecutarlo luego de que el HTML este completo -->
+  <script src="script.js" type="text/javascript" defer></script>
+
+</head>
+
+<body>
+
+  <!-- Este div encerrara todos los elementos de la lista de tareas, la clase roundBorder es para darle un redondeado a los elementos -->
+  <div class="list roundBorder">
+
+    <!-- Este div se utiliza para encerrar todos los elementos de fecha, a la izquierda la fecha completa y a la derecha el nombre del dia -->
+    <div class="date">
+
+      <!-- Contenedor a la izquierda, fecha con dia, mes y año -->
+      <div class="dateLeft">
+
+        <div id="dateNumber"></div>
+
+        <div>
+
+          <div id="dateMonth"></div>
+
+          <div id="dateYear"></div>
+
+        </div>
+
+      </div>
+
+      <!-- Contenedor a la derecha, con nombre del dia -->
+      <div id="dateText"></div>
+
+    </div>
+
+    <!-- Form con los elementos que serviran para añadir una nueva tarea, con los botones de agregar y ordenar tareas -->
+    <form onsubmit="addNewTask(event)">
+
+      <input type="text" name="taskText" autocomplete="off" placeholder="Nueva tarea" class="roundBorder">
+      
+      <button type="submit" class="addTaskButton">+</button>
+
+      <button type="button" class="orderButton roundBorder" onclick="renderOrderedTasks()">Ordenar</button>
+    
+    </form>
+
+    <!-- Div que contendra todas las tareas agregadas -->
+    <div id="taskConteiner"></div>
+
+  </div>
+
+</body>
+
+</html>
