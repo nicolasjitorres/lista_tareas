@@ -89,7 +89,7 @@ input:focus {
   height: 35px;
   border-radius: 50%;
   font-size: 18px;
-  background-color: var(--disabled);
+  background-color: var(--secondary);
 }
 
 .orderButton {
